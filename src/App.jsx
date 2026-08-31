@@ -1,9 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
- 
-/* ---------------------------------------------------------------
-   DATA — unchanged content, same colors, same fonts.
---------------------------------------------------------------- */
- 
+
 const COLORS = {
   cream: "#EFE7D6",
   creamDeep: "#E4D9C2",
@@ -84,9 +80,6 @@ const INFO = {
   instagram: "https://www.instagram.com/onethird.cafe/",
 };
  
-/* ---------------------------------------------------------------
-   SIGNATURE MARK — the carved wall face beside the entrance.
---------------------------------------------------------------- */
 function MoonMark({ size = 40, color = COLORS.ink, opacity = 1, className = "" }) {
   return (
     <svg
@@ -106,8 +99,6 @@ function MoonMark({ size = 40, color = COLORS.ink, opacity = 1, className = "" }
   );
 }
  
-/* A true architectural arch — semicircle top, straight sides —
-   built with clip-path so it reads as a doorway, not a rounded box. */
 function ArchShape({ children, height = 380, style = {} }) {
   const radius = "50% 50% 0 0 / 46% 46% 0 0";
   return (
@@ -124,8 +115,6 @@ function ArchShape({ children, height = 380, style = {} }) {
   );
 }
  
-/* Fires a class once an element scrolls into view. Respects
-   prefers-reduced-motion by doing nothing (element stays visible). */
 function useReveal() {
   const ref = useRef(null);
   const [shown, setShown] = useState(false);
@@ -172,10 +161,6 @@ function Reveal({ as: Tag = "div", delay = 0, className = "", style = {}, childr
   );
 }
  
-/* ---------------------------------------------------------------
-   PAGE
---------------------------------------------------------------- */
- 
 export default function OneThirdCafe() {
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -219,7 +204,6 @@ export default function OneThirdCafe() {
         }
       `}</style>
  
-      {/* NAV */}
       <header
         className="sticky top-0 z-20 font-body"
         style={{
@@ -308,7 +292,6 @@ export default function OneThirdCafe() {
         </div>
       </header>
  
-      {/* HERO — a real archway: half-circle crown, straight jambs */}
       <section id="top" className="max-w-5xl mx-auto px-6 pt-16 pb-8">
         <Reveal>
           <p
@@ -321,7 +304,6 @@ export default function OneThirdCafe() {
  
         <Reveal delay={100}>
           <div className="relative w-full flex justify-center">
-            {/* jambs */}
             <div
               className="w-full max-w-3xl relative overflow-hidden"
               style={{
@@ -339,7 +321,6 @@ export default function OneThirdCafe() {
                   Sip &nbsp;·&nbsp; Savour &nbsp;·&nbsp; Stay
                 </p>
               </div>
-              {/* base step, echoes a real threshold */}
               <div className="h-3" style={{ background: COLORS.terracottaDeep }} />
             </div>
           </div>
@@ -356,7 +337,6 @@ export default function OneThirdCafe() {
         </Reveal>
       </section>
  
-      {/* TRIAD */}
       <section id="triad" className="max-w-5xl mx-auto px-6 py-16 md:py-24">
         <div className="grid md:grid-cols-3 gap-10 md:gap-8">
           {TRIAD.map((item, i) => (
@@ -378,7 +358,6 @@ export default function OneThirdCafe() {
         </div>
       </section>
  
-      {/* MENU — tabbed by category so the full list doesn't dump at once */}
       <section id="menu" style={{ background: COLORS.creamDeep }} className="py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-6">
           <Reveal className="flex items-end justify-between mb-3">
@@ -444,7 +423,6 @@ export default function OneThirdCafe() {
         </div>
       </section>
  
-      {/* VISIT */}
       <section id="visit" className="max-w-5xl mx-auto px-6 py-16 md:py-24">
         <Reveal
           className="rounded-3xl px-6 md:px-14 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-center"
@@ -528,7 +506,6 @@ export default function OneThirdCafe() {
         </Reveal>
       </section>
  
-      {/* FOOTER */}
       <footer className="font-body border-t" style={{ borderColor: COLORS.creamDeep }}>
         <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-2">
